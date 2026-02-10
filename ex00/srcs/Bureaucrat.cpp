@@ -6,30 +6,44 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 12:56:30 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/09 16:56:33 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/11 00:22:38 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(const std::string& name, unsigned int grade): _name(name), _grade(grade) {}
+#include <iostream>
+
+Bureaucrat::Bureaucrat(const std::string& name, unsigned int grade): _name(name), _grade(grade) {
+	if (grade > 150)
+		throw (GradeTooLowException());
+	else if (grade < 1)
+		throw (GradeTooHighException());
+}
 
 Bureaucrat::~Bureaucrat() {}
 
-const std::string   Bureaucrat::getName() {
+const std::string   Bureaucrat::getName() const {
     return (_name);
 }
 
-unsigned int    Bureaucrat::getGrade() {
+unsigned int    Bureaucrat::getGrade() const {
     return (_grade);
 }
 
 void    Bureaucrat::increment_grade() {
-    if (_grade > 0 && _grade < 150)
-        _grade++;        
+    _grade--;
+	if (_grade < 1)
+		throw (GradeTooHighException());
 }
 
 void    Bureaucrat::decrement_grade() {
-    if (_grade > 1 && _grade <= 150)
-        _grade--;
+    _grade++;
+	if (_grade > 150)
+		throw (GradeTooLowException());
+}
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
+	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
+	return os;
 }

@@ -6,13 +6,14 @@
 #    By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/18 11:36:06 by gpollast          #+#    #+#              #
-#    Updated: 2026/02/09 12:55:51 by gpollast         ###   ########.fr        #
+#    Updated: 2026/02/10 21:31:14 by gpollast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Bureaucrat
 
 SRCS =	srcs/main.cpp \
+		srcs/Bureaucrat.cpp
 
 C++ = c++
 C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -g
