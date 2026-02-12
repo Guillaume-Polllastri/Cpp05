@@ -6,7 +6,7 @@
 #    By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/18 11:36:06 by gpollast          #+#    #+#              #
-#    Updated: 2026/02/12 17:24:49 by gpollast         ###   ########.fr        #
+#    Updated: 2026/02/12 17:54:35 by gpollast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ NAME = exo_02
 
 SRCS =	srcs/main.cpp \
 		srcs/Bureaucrat.cpp \
-		srcs/AForm.cpp
+		srcs/AForm.cpp \
+		srcs/PresidentialPardonForm.cpp \
+		srcs/RobotomyRequestForm.cpp \
+		srcs/ShrubberyCreationForm.cpp
 
 C++ = c++
 C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes -g
