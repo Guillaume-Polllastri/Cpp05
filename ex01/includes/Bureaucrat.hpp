@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 12:56:33 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/12 10:41:16 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/12 14:37:21 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 #include <string>
 #include <exception>
+
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -32,6 +36,7 @@ class Bureaucrat
     void                increment_grade();
     void                decrement_grade();
 
+	void	signForm(Form& form);
 	
 	class GradeTooHighException: public std::exception
 	{
