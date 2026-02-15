@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:22:36 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/12 17:52:15 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/15 20:56:34 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class AForm
     const unsigned int  _gradeToSign;
     const unsigned int  _gradeToExecute;
     
+	protected:
+	void			requirement(Bureaucrat const & executor) const;
+
     public:
     AForm(const std::string& name, const unsigned int gradeToSign, const unsigned int gradeToExecute);
     AForm(const AForm& copy);
@@ -38,7 +41,7 @@ class AForm
     unsigned int    getGradeToSign() const;
     unsigned int    getGradeToExecute() const;
     
-    void    beSigned(const Bureaucrat& bureaucrat);
+    void    		beSigned(const Bureaucrat& bureaucrat);
     virtual void    execute(Bureaucrat const & executor) = 0;
     
 	class GradeTooHighException: public std::exception
@@ -48,11 +51,20 @@ class AForm
 				return "Grade is too HIGH !";
 			}
 	};
+
 	class GradeTooLowException: public std::exception
 	{
 		public:
 			virtual const char* what() const throw() {
 				return "Grade is too LOW !";
+			}
+	};
+	
+	class FormIsNotSignedException: public std::exception
+	{
+		public:
+			virtual const char* what() const throw() {
+				return "Form is not signed !";
 			}
 	};
 };

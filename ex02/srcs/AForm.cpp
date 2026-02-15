@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:38:47 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/12 17:24:37 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/15 20:53:46 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ AForm::AForm(const std::string& name, const unsigned int gradeToSign, const unsi
 
 AForm::AForm(const AForm& copy):
     _name(copy._name),
+	_isSigned(copy._isSigned),
     _gradeToSign(copy._gradeToSign),
     _gradeToExecute(copy._gradeToExecute)
 {
-    *this = copy;
 }
 
 AForm&   AForm::operator=(const AForm& other) {
@@ -73,4 +73,11 @@ void	AForm::beSigned(const Bureaucrat& bureaucrat) {
 	if (bureaucrat.getGrade() > this->_gradeToSign)
 		throw GradeTooLowException();
 	this->_isSigned = true;
+}
+
+void	AForm::requirement(Bureaucrat const & executor) const {
+	if (this->getIsSigned() == false)
+		throw AForm::FormIsNotSignedException();
+	if (executor.getGrade() > this->getGradeToExecute())
+		throw AForm::GradeTooLowException();
 }

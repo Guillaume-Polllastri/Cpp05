@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:38:47 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/12 14:17:48 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:33:23 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ Form::Form(const std::string& name, const unsigned int gradeToSign, const unsign
 
 Form::Form(const Form& copy):
     _name(copy._name),
+	_isSigned(copy._isSigned),
     _gradeToSign(copy._gradeToSign),
     _gradeToExecute(copy._gradeToExecute)
 {
-    *this = copy;
 }
 
 Form&   Form::operator=(const Form& other) {

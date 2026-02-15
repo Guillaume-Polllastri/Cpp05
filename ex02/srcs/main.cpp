@@ -6,13 +6,16 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 11:59:52 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/12 17:54:02 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/15 21:20:38 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include <iostream>
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
@@ -22,12 +25,16 @@ int	main(void)
 		Bureaucrat	toto("toto", 1);
 		Bureaucrat	tata("tata", 150);
 
-		std::cout << "Before decrement: " << toto << " -----> ";
-		toto.decrement_grade();
-		std::cout << "After decrement: " << toto << std::endl;
-		std::cout << "Before decrement: " << tata << " -----> ";
-		tata.increment_grade();
-		std::cout << "After decrement: " << tata << std::endl;
+		ShrubberyCreationForm	shru("test");
+		RobotomyRequestForm		robo("bender");
+		PresidentialPardonForm	pres("tlorette");
+
+		toto.signForm(shru);
+		toto.signForm(robo);
+		toto.signForm(pres);
+		// shru.execute(tata);
+		// robo.execute(toto);
+		pres.execute(toto);
 	}
 	catch (std::exception& e)
 	{
