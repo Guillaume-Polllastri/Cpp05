@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:22:36 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/12 14:17:46 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 13:40:41 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ class Form
     Form&   operator=(const Form& other);
     ~Form();
 
-    std::string   getName() const;
-    bool                getIsSigned() const;
-    unsigned int  getGradeToSign() const;
-    unsigned int  getGradeToExecute() const;
+    std::string   	getName() const;
+    bool			getIsSigned() const;
+    unsigned int  	getGradeToSign() const;
+    unsigned int  	getGradeToExecute() const;
     
     void    beSigned(const Bureaucrat& bureaucrat);
     

@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 11:59:52 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/16 01:05:27 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 13:30:59 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int	main(void)
 		shru->execute(toto);
 		robo->execute(toto);
 		pres->execute(toto);
+
+		delete (shru);
+		delete (robo);
+		delete (pres);
 	}
 	catch (std::exception& e)
 	{

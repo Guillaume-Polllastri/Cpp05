@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:22:36 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/15 20:56:34 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 13:15:45 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class AForm
     AForm(const std::string& name, const unsigned int gradeToSign, const unsigned int gradeToExecute);
     AForm(const AForm& copy);
     AForm&   operator=(const AForm& other);
-    ~AForm();
+    virtual ~AForm();
 
     std::string     getName() const;
     bool            getIsSigned() const;
