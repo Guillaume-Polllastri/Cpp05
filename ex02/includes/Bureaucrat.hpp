@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 12:56:33 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/12 17:26:03 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 16:16:48 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ class Bureaucrat
     void                decrement_grade();
 
 	void	signForm(AForm& form);
+	void	executeForm(AForm const & form) const;
 	
 	class GradeTooHighException: public std::exception
 	{

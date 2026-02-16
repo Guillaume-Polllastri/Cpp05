@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 12:56:30 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/12 17:26:28 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 16:17:16 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,8 @@ void	Bureaucrat::signForm(AForm& form) {
 	{
 		std::cerr << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}	
+}
+
+void	Bureaucrat::executeForm(AForm const& form) const{
+	(void) form;
 }
