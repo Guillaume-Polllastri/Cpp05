@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:22:36 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/16 16:14:02 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 21:22:36 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 #include <string>
 #include <stdbool.h>
-
-#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -42,7 +40,7 @@ class AForm
     unsigned int    getGradeToExecute() const;
     
     void    		beSigned(const Bureaucrat& bureaucrat);
-    virtual void    execute(Bureaucrat const & executor) = 0;
+    virtual void    execute(Bureaucrat const & executor) const = 0;
     
 	class GradeTooHighException: public std::exception
 	{

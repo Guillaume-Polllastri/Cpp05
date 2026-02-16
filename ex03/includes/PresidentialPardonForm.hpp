@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:34:31 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/15 21:18:51 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 21:41:46 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ class PresidentialPardonForm: public AForm
 	PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
 	~PresidentialPardonForm();
 	
-    void    execute(Bureaucrat const & executor);
+    void    execute(Bureaucrat const & executor) const;
 };

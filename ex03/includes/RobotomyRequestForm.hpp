@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:33:52 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/15 20:41:13 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 21:21:55 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ class RobotomyRequestForm: public AForm
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
 	~RobotomyRequestForm();
 	
-    void    execute(Bureaucrat const & executor);
+    void    execute(Bureaucrat const & executor) const;
 };

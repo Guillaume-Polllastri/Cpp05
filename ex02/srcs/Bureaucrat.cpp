@@ -6,12 +6,12 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 12:56:30 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/16 16:17:16 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 21:38:53 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
+#include "AForm.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat(const std::string& name, unsigned int grade): _name(name), _grade(grade) {
@@ -75,5 +75,13 @@ void	Bureaucrat::signForm(AForm& form) {
 }
 
 void	Bureaucrat::executeForm(AForm const& form) const{
-	(void) form;
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
 }

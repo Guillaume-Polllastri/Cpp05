@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:33:33 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/16 12:54:07 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 21:22:55 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-void	ShrubberyCreationForm::execute(Bureaucrat const & executor) {
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	requirement(executor);
 	std::ofstream	file((this->_target + "_shrubbery").c_str());
 	if (file.is_open())

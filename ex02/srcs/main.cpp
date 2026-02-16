@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 11:59:52 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/16 13:45:53 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 21:37:59 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ int	main(void)
 		toto.signForm(shru);
 		toto.signForm(robo);
 		toto.signForm(pres);
-		// shru.execute(tata);
-		// robo.execute(toto);
-		pres.execute(toto);
+
+		toto.executeForm(shru);
+		toto.executeForm(robo);
+		toto.executeForm(pres);
 	}
 	catch (std::exception& e)
 	{

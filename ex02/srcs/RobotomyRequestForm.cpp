@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 17:34:04 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/15 21:12:22 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 21:21:55 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
-void	RobotomyRequestForm::execute(Bureaucrat const & executor) {
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 	requirement(executor);
 	std::srand(std::time(NULL));
 	std::cout << "Sxccdgrgt.. d.dvd cdsdfs...dfsdv" << std::endl;

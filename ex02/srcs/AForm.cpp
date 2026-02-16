@@ -6,11 +6,12 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:38:47 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/16 13:51:31 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 21:19:55 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 #include <iostream>
 
 // CANONICAL FORM
