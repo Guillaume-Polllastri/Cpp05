@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:38:47 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/15 20:53:46 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/16 13:51:31 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ AForm::AForm(const std::string& name, const unsigned int gradeToSign, const unsi
     _isSigned(false),
     _gradeToSign(gradeToSign),
     _gradeToExecute(gradeToExecute) 
-{}
+{
+    if (_gradeToSign > 150 || _gradeToExecute > 150)
+        throw GradeTooLowException();
+    if (_gradeToSign < 1 || _gradeToExecute < 1)
+        throw GradeTooHighException();
+}
 
 AForm::AForm(const AForm& copy):
     _name(copy._name),
