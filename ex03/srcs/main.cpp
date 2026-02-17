@@ -6,7 +6,7 @@
 /*   By: gpollast <gpollast@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 11:59:52 by gpollast          #+#    #+#             */
-/*   Updated: 2026/02/16 13:30:59 by gpollast         ###   ########.fr       */
+/*   Updated: 2026/02/17 16:30:08 by gpollast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	main(void)
 		toto.signForm(*robo);
 		toto.signForm(*pres);
 		
-		shru->execute(toto);
-		robo->execute(toto);
-		pres->execute(toto);
+		toto.executeForm(*shru);
+		toto.executeForm(*robo);
+		toto.executeForm(*pres);
 
 		delete (shru);
 		delete (robo);
